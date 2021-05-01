@@ -3,9 +3,9 @@ dependencies: []
 
 galaxy_info:
   role_name: security
-  author: geerlingguy
+  author: buluma
   description: Security software installation and configuration.
-  company: "Midwestern Mac, LLC"
+  company: ShadowNet"
   license: "license (BSD, MIT)"
   min_ansible_version: 2.4
   platforms:
