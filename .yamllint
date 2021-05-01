@@ -1,0 +1,21 @@
+---
+extends: default
+
+rules:
+  line-length:
+    max: 240
+    level: warning
+  new-line-at-end-of-file: enable
+  new-lines: enable
+  octal-values: disable
+  quoted-strings: disable
+  trailing-spaces: enable
+  comments-indentation: enable  # don't bother me with this rule
+  indentation:
+    indent-sequences: whatever
+  truthy:
+    level: warning
+
+ignore: |
+  .github/stale.yml
+  .travis.yml
