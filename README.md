@@ -23,7 +23,7 @@ Again: Your servers' security is *your* responsibility.
 
 For obvious reasons, `sudo` must be installed if you want to manage the sudoers file with this role.
 
-On RedHat/CentOS systems, make sure you have the EPEL repository installed (you can include the `geerlingguy.repo-epel` role to get it installed).
+On RedHat/CentOS systems, make sure you have the EPEL repository installed (you can include the `buluma.repo-epel` role to get it installed).
 
 No special requirements for Debian/Ubuntu systems.
 
@@ -97,7 +97,7 @@ None.
       vars_files:
         - vars/main.yml
       roles:
-        - geerlingguy.security
+        - buluma.security
 
 *Inside `vars/main.yml`*:
 
