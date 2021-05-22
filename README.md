@@ -15,7 +15,7 @@ There are a few other things you may or may not want to do (which are not includ
 
   - Use logwatch or a centralized logging server to analyze and monitor log files
   - Securely configure user accounts and SSH keys (this role assumes you're not using password authentication or logging in as root)
-  - Have a well-configured firewall (check out the `geerlingguy.firewall` role on Ansible Galaxy for a flexible example)
+  - Have a well-configured firewall (check out the `buluma.firewall` role on Ansible Galaxy for a flexible example)
 
 Again: Your servers' security is *your* responsibility.
 
