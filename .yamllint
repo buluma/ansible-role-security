@@ -13,5 +13,4 @@ rules:
   comments-indentation: enable  # don't bother me with this rule
   indentation:
     indent-sequences: whatever
-  truthy:
-    level: warning
+  truthy: false
