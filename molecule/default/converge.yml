@@ -41,4 +41,4 @@
       when: ansible_distribution == 'Debian'
 
   roles:
-    - role: buluma.security
+    - role: geerlingguy.security

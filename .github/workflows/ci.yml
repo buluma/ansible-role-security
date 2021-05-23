@@ -10,7 +10,7 @@ name: CI
 
 defaults:
   run:
-    working-directory: 'buluma.security'
+    working-directory: 'geerlingguy.security'
 
 jobs:
 
@@ -21,7 +21,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'buluma.security'
+          path: 'geerlingguy.security'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
@@ -34,6 +34,7 @@ jobs:
       - name: Lint code.
         run: |
           yamllint .
+
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
@@ -42,17 +43,14 @@ jobs:
         distro:
           - centos8
           - centos7
-          - ubuntu1604
           - ubuntu1804
-          - ubuntu2004
           - debian10
-          - debian9
 
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'buluma.security'
+          path: 'geerlingguy.security'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
