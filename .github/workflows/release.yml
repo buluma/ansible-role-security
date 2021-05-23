@@ -7,13 +7,16 @@
 
 name: Release
 'on':
+  pull_request:
   push:
-    tags:
-      - '*'
+    branches:
+      - master
+  schedule:
+    - cron: "30 4 * * 4"
 
 defaults:
   run:
-    working-directory: 'geerlingguy.security'
+    working-directory: 'buluma.security'
 
 jobs:
 
@@ -24,7 +27,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'geerlingguy.security'
+          path: 'buluma.security'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
