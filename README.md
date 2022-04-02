@@ -53,7 +53,7 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
       when: ansible_distribution == 'Debian'
 
   roles:
-    - role: geerlingguy.security
+    - role: buluma.security
 ```
 
 

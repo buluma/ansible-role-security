@@ -41,4 +41,4 @@
       when: ansible_distribution == 'Debian'
 
   roles:
-    - role: geerlingguy.security
+    - role: ansible-role-security
