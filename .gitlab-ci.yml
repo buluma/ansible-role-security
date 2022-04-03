@@ -19,8 +19,6 @@ molecule:
       - image: "enterpriselinux"
         tag: "latest"
       - image: "centos"
-        tag: "6"
-      - image: "centos"
         tag: "centos8"
       - image: "centos"
         tag: "centos7"
