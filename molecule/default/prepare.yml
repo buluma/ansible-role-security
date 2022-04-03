@@ -6,4 +6,5 @@
 
   roles:
     - role: buluma.bootstrap
+    - role: buluma.epel
     - role: buluma.repo_epel
