@@ -54,6 +54,7 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
 
   roles:
     - role: buluma.security
+      security_autoupdate_enabled: false
 ```
 
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
@@ -97,8 +98,9 @@ security_ssh_allowed_groups: []
 security_sudoers_passwordless: []
 security_sudoers_passworded: []
 
-security_autoupdate_enabled: true
+security_autoupdate_enabled: false
 security_autoupdate_blacklist: []
+security_autoupdate_secpkgs_only: false
 
 # Autoupdate mail settings used on Debian/Ubuntu only.
 security_autoupdate_reboot: "false"
@@ -139,9 +141,9 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |container|tags|
 |---------|----|
 |el|all|
-|fedora|all|
-|debian|all|
-|ubuntu|all|
+|fedora|rawhide, latest|
+|debian|bookworm, buster, bullseye, stretch, sid, jessie|
+|ubuntu|impish, focal, bionic, hirsute, jammy|
 
 The minimum version of Ansible required is 2.4, tests have been done to:
 
@@ -149,6 +151,13 @@ The minimum version of Ansible required is 2.4, tests have been done to:
 - The current version.
 - The development version.
 
+## [Exceptions](#exceptions)
+
+Some roles can't run on a specific distribution or version. Here are some exceptions.
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| Ubuntu:trusty | ansible-core requires a minimum of Python2 version 2.6 or Python3 version 3.5. |
 
 
 If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-security/issues)
