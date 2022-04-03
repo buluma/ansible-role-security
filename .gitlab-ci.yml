@@ -32,8 +32,12 @@ molecule:
         tag: "latest"
       - image: "docker-ubuntu-systemd"
         tag: "bionic"
-      - image: "docker-ubuntu-systemd"
-        tag: "focal"
+      - image: "amazonlinux"
+        tag: "2"
+      - image: "fedora-systemd"
+        tag: "latest"
+      - image: "fedora-systemd"
+        tag: "rawhide"
 
 testing:
   script:
