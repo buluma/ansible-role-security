@@ -56,10 +56,6 @@ molecule:
         tag: "latest"
       - image: "fedora"
         tag: "rawhide"
-      - image: "alpine"
-        tag: "latest"
-      - image: "alpine"
-        tag: "edge"
 
 testing:
   script:
@@ -111,10 +107,6 @@ testing:
         tag: "latest"
       - image: "fedora"
         tag: "rawhide"
-      - image: "alpine"
-        tag: "latest"
-      - image: "alpine"
-        tag: "edge"
 
 galaxy:
   script:
@@ -168,7 +160,3 @@ role_testing:
         tag: "latest"
       - image: "fedora"
         tag: "rawhide"
-      - image: "alpine"
-        tag: "latest"
-      - image: "alpine"
-        tag: "edge"
