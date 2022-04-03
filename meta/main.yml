@@ -15,13 +15,23 @@ galaxy_info:
         - all
     - name: Fedora
       versions:
-        - all
+        - rawhide
+        - latest
     - name: Debian
       versions:
-        - all
+        - bookworm
+        - buster
+        - bullseye
+        - stretch
+        - sid
+        - jessie
     - name: Ubuntu
       versions:
-        - all
+        - impish
+        - focal
+        - bionic
+        - hirsute
+        - jammy
   galaxy_tags:
     - system
     - security
