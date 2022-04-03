@@ -15,8 +15,7 @@ galaxy_info:
         - all
     - name: Fedora
       versions:
-        - rawhide
-        - latest
+        - all
     - name: Debian
       versions:
         - bookworm
@@ -27,11 +26,7 @@ galaxy_info:
         - jessie
     - name: Ubuntu
       versions:
-        - impish
-        - focal
-        - bionic
-        - hirsute
-        - jammy
+        - all
   galaxy_tags:
     - system
     - security
