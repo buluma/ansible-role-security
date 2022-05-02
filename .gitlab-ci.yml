@@ -13,6 +13,11 @@ molecule:
   allow_failure: true
   script:
     - image=${image} tag=${tag} molecule test
+  artifacts:
+    name: "$CI_JOB_STAGE-$CI_COMMIT_REF_NAME"
+    paths:
+      - /
+    expire_in: 1 day
   retry: 1
   parallel:
     matrix:
