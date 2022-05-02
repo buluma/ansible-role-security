@@ -1,6 +1,4 @@
 ---
-<<<<<<< Updated upstream
-=======
 # TODO: Build prepare tasks and move out of molecule
 
 - name: Update apt cache.
@@ -39,9 +37,8 @@
     mode: 0644
   when: ansible_distribution == 'Debian'
 
->>>>>>> Stashed changes
 - name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
+  ansible.builtin.include_vars: "{{ ansible_os_family }}.yml"
 
 # Fail2Ban
 - include_tasks: fail2ban.yml

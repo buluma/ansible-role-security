@@ -55,6 +55,7 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
   roles:
     - role: buluma.security
       security_autoupdate_enabled: false
+      security_fail2ban_enabled: false
 ```
 
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:

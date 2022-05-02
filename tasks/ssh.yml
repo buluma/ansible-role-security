@@ -1,10 +1,10 @@
 ---
-- name: Ensure SSH daemon is running.
+- name: ensure SSH daemon is running.
   ansible.builtin.service:
     name: "{{ security_sshd_name }}"
     state: "{{ security_sshd_state }}"
 
-- name: Update SSH configuration to be more secure.
+- name: update SSH configuration to be more secure.
   ansible.builtin.lineinfile:
     dest: "{{ security_ssh_config_path }}"
     regexp: "{{ item.regexp }}"
@@ -31,7 +31,7 @@
       line: "X11Forwarding {{ security_ssh_x11_forwarding }}"
   notify: restart ssh
 
-- name: Add configured users allowed to connect over ssh
+- name: add configured users allowed to connect over ssh
   ansible.builtin.lineinfile:
     dest: "{{ security_ssh_config_path }}"
     regexp: '^AllowUsers'
@@ -43,7 +43,7 @@
   when: security_ssh_allowed_users | length > 0
   notify: restart ssh
 
-- name: Add configured groups allowed to connect over ssh
+- name: add configured groups allowed to connect over ssh
   ansible.builtin.lineinfile:
     dest: "{{ security_ssh_config_path }}"
     regexp: '^AllowGroups'
@@ -55,7 +55,7 @@
   when: security_ssh_allowed_groups | length > 0
   notify: restart ssh
 
-- name: Add configured user accounts to passwordless sudoers.
+- name: add configured user accounts to passwordless sudoers.
   ansible.builtin.lineinfile:
     dest: /etc/sudoers
     regexp: '^{{ item }} '
@@ -66,7 +66,7 @@
   with_items: "{{ security_sudoers_passwordless }}"
   when: security_sudoers_passwordless | length > 0
 
-- name: Add configured user accounts to passworded sudoers.
+- name: add configured user accounts to passworded sudoers.
   ansible.builtin.lineinfile:
     dest: /etc/sudoers
     regexp: '^{{ item }} '
