@@ -43,3 +43,4 @@
   roles:
     - role: ansible-role-security
       security_autoupdate_enabled: false
+      security_fail2ban_enabled: false
