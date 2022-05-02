@@ -1,9 +1,16 @@
 # Changelog
 
-
 ## [Unreleased](https://github.com/buluma/ansible-role-security/tree/HEAD)
 
-[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v0.1.2...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v0.1.3...HEAD)
+
+**Closed issues:**
+
+- Build prepare tasks and move out of molecule [\#3](https://github.com/buluma/ansible-role-security/issues/3)
+
+**Merged pull requests:**
+
+- https://github.com/buluma/ansible-role-security/issues/3 [\#5](https://github.com/buluma/ansible-role-security/pull/5) ([buluma](https://github.com/buluma))
 
 ## [v0.1.3](https://github.com/buluma/ansible-role-security/tree/v0.1.3) (2022-05-01)
 
