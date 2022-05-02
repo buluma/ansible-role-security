@@ -43,4 +43,4 @@
   roles:
     - role: ansible-role-security
       security_autoupdate_enabled: false
-      security_fail2ban_enabled: false
+      security_fail2ban_enabled: false  # TODO: Check fail2ban failure on focal/bionic

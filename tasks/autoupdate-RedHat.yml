@@ -1,30 +1,30 @@
 ---
-- name: Set correct automatic update utility vars (RHEL 8).
+- name: set correct automatic update utility vars (RHEL 8).
   ansible.builtin.set_fact:
     update_utility: dnf-automatic
     update_service: dnf-automatic-install.timer
     update_conf_path: /etc/dnf/automatic.conf
   when: ansible_distribution_major_version | int == 8
 
-- name: Set correct automatic update utility vars (RHEL <= 7).
+- name: set correct automatic update utility vars (RHEL <= 7).
   ansible.builtin.set_fact:
     update_utility: yum-cron
     update_service: yum-cron
     update_conf_path: /etc/yum/yum-cron.conf
   when: ansible_distribution_major_version | int <= 7
 
-- name: Install automatic update utility.
+- name: install automatic update utility.
   ansible.builtin.package:
     name: '{{ update_utility }}'
     state: present
 
-- name: Ensure automatic update utility is running and enabled on boot.
+- name: ensure automatic update utility is running and enabled on boot.
   ansible.builtin.service:
     name: '{{ update_service }}'
     state: started
     enabled: true
 
-- name: Enable autoupdates.
+- name: enable autoupdates.
   ansible.builtin.lineinfile:
     dest: '{{ update_conf_path }}'
     regexp: '^apply_updates = .+'
@@ -34,7 +34,7 @@
     - security_autoupdate_enabled
     - ansible_distribution_major_version | int in [7, 8]
 
-- name: Set automatic update type to security updates only.
+- name: set automatic update type to security updates only.
   ansible.builtin.lineinfile:
     dest: '{{ update_conf_path }}'
     regexp: '^update_cmd = .+'
@@ -45,7 +45,7 @@
     - security_autoupdate_secpkgs_only
     - ansible_distribution_major_version | int in [7, 8]
 
-- name: Set automatic update blacklist.
+- name: set automatic update blacklist.
   ansible.builtin.lineinfile:
     dest: '{{ update_conf_path }}'
     insertafter: '[base]'
