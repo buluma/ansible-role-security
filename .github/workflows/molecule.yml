@@ -56,6 +56,8 @@ jobs:
             tag: "bionic"
           - image: "docker-ubuntu-systemd"
             tag: "focal"
+          - image: "docker-ubuntu-systemd"
+            tag: "jammy"
     steps:
       - name: checkout
         uses: actions/checkout@v3
