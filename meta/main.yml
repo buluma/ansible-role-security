@@ -2,9 +2,8 @@
 dependencies: []
 
 galaxy_info:
+  author: buluma
   role_name: security
-  author: Michael Buluma
-  namespace: buluma
   description: Security software installation and configuration.
   company: "ShadowNet"
   license: "Apache-2.0"
