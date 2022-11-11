@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.1.5](https://github.com/buluma/ansible-role-security/tree/v0.1.5) (2022-07-08)
+
+[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v0.1.4...v0.1.5)
+
 ## [v0.1.4](https://github.com/buluma/ansible-role-security/tree/v0.1.4) (2022-05-11)
 
 [Full Changelog](https://github.com/buluma/ansible-role-security/compare/v0.1.3...v0.1.4)
