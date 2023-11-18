@@ -1,4 +1,4 @@
-# [security](#security)
+# [Ansible role security](#security)
 
 Security software installation and configuration.
 
