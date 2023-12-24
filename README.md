@@ -1,10 +1,10 @@
-# [Ansible role security](#security)
+# Ansible role [security](https://galaxy.ansible.com/ui/standalone/roles/buluma/security/documentation)
 
 Security software installation and configuration.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-security/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-security/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-security.svg)](https://github.com/buluma/ansible-role-security/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-security.svg)](https://github.com/buluma/ansible-role-security/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-security.svg)](https://github.com/buluma/ansible-role-security/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-security/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-security/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-security.svg)](https://github.com/buluma/ansible-role-security/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-security.svg)](https://github.com/buluma/ansible-role-security/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-security.svg)](https://github.com/buluma/ansible-role-security/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/security)](https://galaxy.ansible.com/ui/standalone/roles/buluma/security/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -133,9 +133,7 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [Author Information](#author-information)
 
-[buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-
-### [Special Thanks](#special-thanks)
 
 Template inspired by [Robert de Bock](https://github.com/robertdebock)
