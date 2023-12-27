@@ -6,6 +6,7 @@
 
 **Closed issues:**
 
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#16](https://github.com/buluma/ansible-role-security/issues/16)
 - Check fail2ban failure on focal/bionic [\#13](https://github.com/buluma/ansible-role-security/issues/13)
 - Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#12](https://github.com/buluma/ansible-role-security/issues/12)
 - Update action [\#11](https://github.com/buluma/ansible-role-security/issues/11)
