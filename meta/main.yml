@@ -20,10 +20,9 @@ galaxy_info:
         - all
     - name: Ubuntu
       versions:
-        - all
-    - name: Kali
-      versions:
-        - all
+        - jammy
+        - focal
+        - bionic
   galaxy_tags:
     - system
     - security
