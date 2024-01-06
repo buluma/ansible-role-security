@@ -2,7 +2,7 @@
 #
 # Ansible managed
 #
-excluded_paths:
+exclude_paths:
   - molecule/default/collections.yml
   - .tox
   - .cache
