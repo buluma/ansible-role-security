@@ -47,7 +47,7 @@
   when: security_fail2ban_enabled | bool
 
 # SSH
-- - name: Run SSH
+- name: Run SSH
   ansible.builtin.import_tasks:
     file: ssh.yml
 
