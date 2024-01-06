@@ -14,6 +14,8 @@ skip_list:
   - fqcn[action-core]
   - name[missing]
   - name[casing]
+  - no-changed-when
+  - name[template]
 
 enable_list:
   - name[prefix]
