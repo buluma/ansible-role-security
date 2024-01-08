@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-security/tree/HEAD)
+## [v0.2.0](https://github.com/buluma/ansible-role-security/tree/v0.2.0) (2024-01-06)
 
-[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v0.1.5...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v0.1.5...v0.2.0)
 
 **Closed issues:**
 
