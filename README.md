@@ -15,7 +15,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 - name: Converge
   hosts: all
   become: yes
-  gather_facts: no
+  gather_facts: yes
 
   roles:
     - role: buluma.security
@@ -94,6 +94,7 @@ The following roles are used to prepare a system. You can prepare your system in
 |[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Ansible Molecule](https://github.com/buluma/ansible-role-bootstrap/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-bootstrap.svg)](https://github.com/shadowwalker/ansible-role-bootstrap)|
 |[buluma.epel](https://galaxy.ansible.com/buluma/epel)|[![Ansible Molecule](https://github.com/buluma/ansible-role-epel/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-epel/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-epel.svg)](https://github.com/shadowwalker/ansible-role-epel)|
 |[buluma.repo_epel](https://galaxy.ansible.com/buluma/repo_epel)|[![Ansible Molecule](https://github.com/buluma/ansible-role-repo_epel/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-repo_epel/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-repo_epel.svg)](https://github.com/shadowwalker/ansible-role-repo_epel)|
+|[buluma.security](https://galaxy.ansible.com/buluma/security)|[![Ansible Molecule](https://github.com/buluma/ansible-role-security/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-security/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-security.svg)](https://github.com/shadowwalker/ansible-role-security)|
 
 ## [Context](#context)
 
