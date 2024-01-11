@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-security/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v0.2.0...HEAD)
+
+**Merged pull requests:**
+
+- Bump actions/checkout from 3 to 4 [\#18](https://github.com/buluma/ansible-role-security/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.2.0](https://github.com/buluma/ansible-role-security/tree/v0.2.0) (2024-01-06)
 
 [Full Changelog](https://github.com/buluma/ansible-role-security/compare/v0.1.5...v0.2.0)
