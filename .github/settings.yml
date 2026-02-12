@@ -5,4 +5,4 @@
 repository:
   description: Security software installation and configuration.
   homepage: https://buluma.github.io/
-  topics: system, security, fail2ban, automatic, updates, yum, apt, dnf, hardening, ansible, molecule, tox, playbook
+  topics: system, security, fail2ban, automatic, updates, yum, apt, dnf, hardening, ansible, molecule, playbook

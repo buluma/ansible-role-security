@@ -2,18 +2,10 @@
 #
 # Ansible managed
 #
-exclude_paths:
   - molecule/default/collections.yml
-  - .tox
   - .cache
   - .github
   - requirements.yml
-
-skip_list:
-  - yaml[truthy]
-  - fqcn[action-core]
-  - no-changed-when
-  - name[template]
 
 enable_list:
   - name[prefix]
