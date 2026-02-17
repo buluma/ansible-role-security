@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-security/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v24.3.31...HEAD)
+
+**Closed issues:**
+
+- Update action [\#15](https://github.com/buluma/ansible-role-security/issues/15)
+- rebuild action [\#14](https://github.com/buluma/ansible-role-security/issues/14)
+
 ## [v24.3.31](https://github.com/buluma/ansible-role-security/tree/v24.3.31) (2024-03-26)
 
 [Full Changelog](https://github.com/buluma/ansible-role-security/compare/v0.4.0...v24.3.31)
@@ -8,7 +17,6 @@
 
 - Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#22](https://github.com/buluma/ansible-role-security/pull/22) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#21](https://github.com/buluma/ansible-role-security/pull/21) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump actions/checkout from 3 to 4 [\#18](https://github.com/buluma/ansible-role-security/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v0.4.0](https://github.com/buluma/ansible-role-security/tree/v0.4.0) (2024-01-20)
 
@@ -21,6 +29,10 @@
 ## [v0.3.0](https://github.com/buluma/ansible-role-security/tree/v0.3.0) (2024-01-11)
 
 [Full Changelog](https://github.com/buluma/ansible-role-security/compare/v0.2.0...v0.3.0)
+
+**Merged pull requests:**
+
+- Bump actions/checkout from 3 to 4 [\#18](https://github.com/buluma/ansible-role-security/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v0.2.0](https://github.com/buluma/ansible-role-security/tree/v0.2.0) (2024-01-06)
 
