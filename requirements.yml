@@ -1,7 +1,6 @@
----
+collections: null
 roles:
-  - name: buluma.bootstrap
-  - name: buluma.epel
-  - name: buluma.repo_epel
-  - name: buluma.security
-collections:
+- name: buluma.bootstrap
+- name: buluma.epel
+- name: buluma.repo_epel
+- name: buluma.security

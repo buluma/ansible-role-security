@@ -1,71 +1,52 @@
----
-# TODO: Build prepare tasks and move out of molecule
-
-- name: Update apt cache.
-  ansible.builtin.package:
-    update_cache: true
+- ansible.builtin.package:
     cache_valid_time: 600
+    update_cache: true
+  name: Update apt cache.
   when: ansible_os_family == 'Debian'
-
-- name: Ensure build dependencies are installed (RedHat).
-  ansible.builtin.package:
+- ansible.builtin.package:
     name:
-      - openssh-server
-      - openssh-clients
+    - openssh-server
+    - openssh-clients
     state: present
+  name: Ensure build dependencies are installed (RedHat).
   when: ansible_os_family == 'RedHat'
-
-- name: Ensure build dependencies are installed (Fedora).
-  ansible.builtin.package:
+- ansible.builtin.package:
     name: procps
     state: present
+  name: Ensure build dependencies are installed (Fedora).
   when: ansible_distribution == 'Fedora'
-
-- name: Ensure build dependencies are installed (Debian).
-  ansible.builtin.package:
+- ansible.builtin.package:
     name:
-      - openssh-server
-      - openssh-client
+    - openssh-server
+    - openssh-client
     state: present
+  name: Ensure build dependencies are installed (Debian).
   when: ansible_os_family == 'Debian'
-
-- name: Ensure auth.log file is present.
-  ansible.builtin.copy:
+- ansible.builtin.copy:
+    content: ''
     dest: /var/log/auth.log
-    content: ""
     force: false
-    mode: 0644
+    mode: 420
+  name: Ensure auth.log file is present.
   when: ansible_distribution == 'Debian'
-
-- name: Include OS-specific variables.
-  ansible.builtin.include_vars: "{{ ansible_os_family }}.yml"
-
-# Fail2Ban
-- name: Run Fail2Ban
-  ansible.builtin.import_tasks:
+- ansible.builtin.include_vars: '{{ ansible_os_family }}.yml'
+  name: Include OS-specific variables.
+- ansible.builtin.import_tasks:
     file: fail2ban.yml
+  name: Run Fail2Ban
   when: security_fail2ban_enabled | bool
-
-# SSH
-- name: Run SSH
-  ansible.builtin.import_tasks:
+- ansible.builtin.import_tasks:
     file: ssh.yml
-
-# SELinux SSH Rules (RedHat)
-# - include_tasks: sepolicy-RedHat.yml
-#   when: ansible_os_family == 'RedHat'
-
-# Autoupdate
-- name: Run Autoupdate
-  ansible.builtin.import_tasks:
+  name: Run SSH
+- ansible.builtin.import_tasks:
     file: autoupdate-RedHat.yml
+  name: Run Autoupdate
   when:
-    - ansible_os_family == 'RedHat'
-    - security_autoupdate_enabled | bool
-
-- name: Autoupdate Debian
-  ansible.builtin.import_tasks:
+  - ansible_os_family == 'RedHat'
+  - security_autoupdate_enabled | bool
+- ansible.builtin.import_tasks:
     file: autoupdate-Debian.yml
+  name: Autoupdate Debian
   when:
-    - ansible_os_family == 'Debian'
-    - security_autoupdate_enabled | bool
+  - ansible_os_family == 'Debian'
+  - security_autoupdate_enabled | bool
