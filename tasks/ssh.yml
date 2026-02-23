@@ -1,74 +1,74 @@
 ---
-  - ansible.builtin.service:
-      name: '{{ security_sshd_name }}'
-      state: '{{ security_sshd_state }}'
-    name: ssh | Ensure SSH daemon is running.
-  - ansible.builtin.lineinfile:
-      dest: '{{ security_ssh_config_path }}'
-      line: '{{ item.line }}'
-      mode: 420
-      regexp: '{{ item.regexp }}'
-      state: present
-      validate: sshd -T -f %s
-    name: ssh | Update SSH configuration to be more secure.
-    notify: Restart ssh
-    with_items:
-      - line: PasswordAuthentication {{ security_ssh_password_authentication }}
-        regexp: ^PasswordAuthentication
-      - line: PermitRootLogin {{ security_ssh_permit_root_login }}
-        regexp: ^PermitRootLogin
-      - line: Port {{ security_ssh_port }}
-        regexp: ^Port
-      - line: UseDNS {{ security_ssh_usedns }}
-        regexp: ^UseDNS
-      - line: PermitEmptyPasswords {{ security_ssh_permit_empty_password }}
-        regexp: ^PermitEmptyPasswords
-      - line: ChallengeResponseAuthentication {{ 
-          security_ssh_challenge_response_auth }}
-        regexp: ^ChallengeResponseAuthentication
-      - line: GSSAPIAuthentication {{ security_ssh_gss_api_authentication }}
-        regexp: ^GSSAPIAuthentication
-      - line: X11Forwarding {{ security_ssh_x11_forwarding }}
-        regexp: ^X11Forwarding
-  - ansible.builtin.lineinfile:
-      create: true
-      dest: '{{ security_ssh_config_path }}'
-      line: AllowUsers {{ security_ssh_allowed_users | join(' ') }}
-      mode: 420
-      regexp: ^AllowUsers
-      state: present
-      validate: sshd -T -f %s
-    name: ssh | Add configured users allowed to connect over ssh
-    notify: Restart ssh
-    when: security_ssh_allowed_users | length > 0
-  - ansible.builtin.lineinfile:
-      create: true
-      dest: '{{ security_ssh_config_path }}'
-      line: AllowGroups {{ security_ssh_allowed_groups | join(' ') }}
-      mode: 420
-      regexp: ^AllowGroups
-      state: present
-      validate: sshd -T -f %s
-    name: ssh | Add configured groups allowed to connect over ssh
-    notify: Restart ssh
-    when: security_ssh_allowed_groups | length > 0
-  - ansible.builtin.lineinfile:
-      dest: /etc/sudoers
-      line: '{{ item }} ALL=(ALL) NOPASSWD: ALL'
-      mode: 420
-      regexp: '^{{ item }} '
-      state: present
-      validate: visudo -cf %s
-    name: ssh | Add configured user accounts to passwordless sudoers.
-    when: security_sudoers_passwordless | length > 0
-    with_items: '{{ security_sudoers_passwordless }}'
-  - ansible.builtin.lineinfile:
-      dest: /etc/sudoers
-      line: '{{ item }} ALL=(ALL) ALL'
-      mode: 420
-      regexp: '^{{ item }} '
-      state: present
-      validate: visudo -cf %s
-    name: ssh | Add configured user accounts to passworded sudoers.
-    when: security_sudoers_passworded | length > 0
-    with_items: '{{ security_sudoers_passworded }}'
+- ansible.builtin.service:
+    name: '{{ security_sshd_name }}'
+    state: '{{ security_sshd_state }}'
+  name: ssh | Ensure SSH daemon is running.
+- ansible.builtin.lineinfile:
+    dest: '{{ security_ssh_config_path }}'
+    line: '{{ item.line }}'
+    mode: 420
+    regexp: '{{ item.regexp }}'
+    state: present
+    validate: sshd -T -f %s
+  name: ssh | Update SSH configuration to be more secure.
+  notify: Restart ssh
+  with_items:
+  - line: PasswordAuthentication {{ security_ssh_password_authentication }}
+    regexp: ^PasswordAuthentication
+  - line: PermitRootLogin {{ security_ssh_permit_root_login }}
+    regexp: ^PermitRootLogin
+  - line: Port {{ security_ssh_port }}
+    regexp: ^Port
+  - line: UseDNS {{ security_ssh_usedns }}
+    regexp: ^UseDNS
+  - line: PermitEmptyPasswords {{ security_ssh_permit_empty_password }}
+    regexp: ^PermitEmptyPasswords
+  - line: ChallengeResponseAuthentication {{ 
+      security_ssh_challenge_response_auth }}
+    regexp: ^ChallengeResponseAuthentication
+  - line: GSSAPIAuthentication {{ security_ssh_gss_api_authentication }}
+    regexp: ^GSSAPIAuthentication
+  - line: X11Forwarding {{ security_ssh_x11_forwarding }}
+    regexp: ^X11Forwarding
+- ansible.builtin.lineinfile:
+    create: true
+    dest: '{{ security_ssh_config_path }}'
+    line: AllowUsers {{ security_ssh_allowed_users | join(' ') }}
+    mode: 420
+    regexp: ^AllowUsers
+    state: present
+    validate: sshd -T -f %s
+  name: ssh | Add configured users allowed to connect over ssh
+  notify: Restart ssh
+  when: security_ssh_allowed_users | length > 0
+- ansible.builtin.lineinfile:
+    create: true
+    dest: '{{ security_ssh_config_path }}'
+    line: AllowGroups {{ security_ssh_allowed_groups | join(' ') }}
+    mode: 420
+    regexp: ^AllowGroups
+    state: present
+    validate: sshd -T -f %s
+  name: ssh | Add configured groups allowed to connect over ssh
+  notify: Restart ssh
+  when: security_ssh_allowed_groups | length > 0
+- ansible.builtin.lineinfile:
+    dest: /etc/sudoers
+    line: '{{ item }} ALL=(ALL) NOPASSWD: ALL'
+    mode: 420
+    regexp: '^{{ item }} '
+    state: present
+    validate: visudo -cf %s
+  name: ssh | Add configured user accounts to passwordless sudoers.
+  when: security_sudoers_passwordless | length > 0
+  with_items: '{{ security_sudoers_passwordless }}'
+- ansible.builtin.lineinfile:
+    dest: /etc/sudoers
+    line: '{{ item }} ALL=(ALL) ALL'
+    mode: 420
+    regexp: '^{{ item }} '
+    state: present
+    validate: visudo -cf %s
+  name: ssh | Add configured user accounts to passworded sudoers.
+  when: security_sudoers_passworded | length > 0
+  with_items: '{{ security_sudoers_passworded }}'

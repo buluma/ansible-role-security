@@ -1,10 +1,10 @@
 ---
-  - ansible.builtin.shell: semanage port -lC | grep {{ security_ssh_port }}
-    ignore_errors: true
-    name: sepolicy-RedHat | Check if SSH port is already allowed in SELinux 
-      (RedHat)
-    register: allowed
-  - ansible.builtin.command: semanage port -a -t ssh_port_t -p tcp {{ 
-      security_ssh_port }}
-    name: sepolicy-RedHat | Allow SSH to run on {{ security_ssh_port }} (RedHat)
-    when: allowed.rc != 0
+- ansible.builtin.shell: semanage port -lC | grep {{ security_ssh_port }}
+  ignore_errors: true
+  name: sepolicy-RedHat | Check if SSH port is already allowed in SELinux 
+    (RedHat)
+  register: allowed
+- ansible.builtin.command: semanage port -a -t ssh_port_t -p tcp {{ 
+    security_ssh_port }}
+  name: sepolicy-RedHat | Allow SSH to run on {{ security_ssh_port }} (RedHat)
+  when: allowed.rc != 0
