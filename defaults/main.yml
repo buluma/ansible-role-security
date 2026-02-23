@@ -1,3 +1,4 @@
+---
 security_autoupdate_blacklist: []
 security_autoupdate_enabled: false
 security_autoupdate_mail_on_error: true

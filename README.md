@@ -11,31 +11,33 @@ Security software installation and configuration.
 This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-security/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
 ```yaml
-- become: true
-  gather_facts: true
-  hosts: all
-  name: Converge
-  roles:
-  - role: buluma.security
-    security_autoupdate_enabled: false
-    security_fail2ban_enabled: false
+---
+  - become: true
+    gather_facts: true
+    hosts: all
+    name: Converge
+    roles:
+      - role: buluma.security
+        security_autoupdate_enabled: false
+        security_fail2ban_enabled: false
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-security/blob/master/molecule/default/prepare.yml):
 
 ```yaml
-- become: true
-  gather_facts: false
-  hosts: all
-  name: Prepare
-  roles:
-  - role: buluma.bootstrap
-  - role: buluma.epel
-  - role: buluma.repo_epel
-    when:
-    - (ansible_distribution == "Amazon" and ansible_distribution_major_version ==
-      "2") or (ansible_os_family == "RedHat" and ansible_distribution_major_version
-      in [ "7", "8" ])
+---
+  - become: true
+    gather_facts: false
+    hosts: all
+    name: Prepare
+    roles:
+      - role: buluma.bootstrap
+      - role: buluma.epel
+      - role: buluma.repo_epel
+        when:
+          - (ansible_distribution == "Amazon" and 
+            ansible_distribution_major_version == "2") or (ansible_os_family == 
+            "RedHat" and ansible_distribution_major_version in [ "7", "8" ])
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -45,6 +47,7 @@ Also see a [full explanation and example](https://buluma.github.io/how-to-use-th
 The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-security/blob/master/defaults/main.yml):
 
 ```yaml
+---
 security_autoupdate_blacklist: []
 security_autoupdate_enabled: false
 security_autoupdate_mail_on_error: true
