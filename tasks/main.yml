@@ -1,53 +1,53 @@
 ---
-- ansible.builtin.package:
+- name: Update apt cache.
+  ansible.builtin.package:
     cache_valid_time: 600
     update_cache: true
-  name: Update apt cache.
   when: ansible_os_family == 'Debian'
-- ansible.builtin.package:
+- name: Ensure build dependencies are installed (RedHat).
+  ansible.builtin.package:
     name:
-    - openssh-server
-    - openssh-clients
+      - openssh-server
+      - openssh-clients
     state: present
-  name: Ensure build dependencies are installed (RedHat).
   when: ansible_os_family == 'RedHat'
-- ansible.builtin.package:
+- name: Ensure build dependencies are installed (Fedora).
+  ansible.builtin.package:
     name: procps
     state: present
-  name: Ensure build dependencies are installed (Fedora).
   when: ansible_distribution == 'Fedora'
-- ansible.builtin.package:
+- name: Ensure build dependencies are installed (Debian).
+  ansible.builtin.package:
     name:
-    - openssh-server
-    - openssh-client
+      - openssh-server
+      - openssh-client
     state: present
-  name: Ensure build dependencies are installed (Debian).
   when: ansible_os_family == 'Debian'
-- ansible.builtin.copy:
-    content: ''
+- name: Ensure auth.log file is present.
+  ansible.builtin.copy:
+    content: ""
     dest: /var/log/auth.log
     force: false
     mode: "0644"
-  name: Ensure auth.log file is present.
   when: ansible_distribution == 'Debian'
-- ansible.builtin.include_vars: '{{ ansible_os_family }}.yml'
-  name: Include OS-specific variables.
-- ansible.builtin.import_tasks:
+- name: Include OS-specific variables.
+  ansible.builtin.include_vars: "{{ ansible_os_family }}.yml"
+- name: Run Fail2Ban
+  ansible.builtin.import_tasks:
     file: fail2ban.yml
-  name: Run Fail2Ban
   when: security_fail2ban_enabled | bool
-- ansible.builtin.import_tasks:
+- name: Run SSH
+  ansible.builtin.import_tasks:
     file: ssh.yml
-  name: Run SSH
-- ansible.builtin.import_tasks:
+- name: Run Autoupdate
+  ansible.builtin.import_tasks:
     file: autoupdate-RedHat.yml
-  name: Run Autoupdate
   when:
-  - ansible_os_family == 'RedHat'
-  - security_autoupdate_enabled | bool
-- ansible.builtin.import_tasks:
+    - ansible_os_family == 'RedHat'
+    - security_autoupdate_enabled | bool
+- name: Autoupdate Debian
+  ansible.builtin.import_tasks:
     file: autoupdate-Debian.yml
-  name: Autoupdate Debian
   when:
-  - ansible_os_family == 'Debian'
-  - security_autoupdate_enabled | bool
+    - ansible_os_family == 'Debian'
+    - security_autoupdate_enabled | bool
