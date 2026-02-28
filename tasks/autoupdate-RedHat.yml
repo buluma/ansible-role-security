@@ -26,7 +26,7 @@
 - ansible.builtin.lineinfile:
     dest: '{{ update_conf_path }}'
     line: apply_updates = yes
-    mode: 420
+    mode: "0644"
     regexp: ^apply_updates = .+
   name: autoupdate-RedHat | Configure autoupdates.
   when:

@@ -13,7 +13,7 @@
 - ansible.builtin.template:
     dest: /etc/fail2ban/jail.local
     group: root
-    mode: 420
+    mode: "0644"
     owner: root
     src: '{{ security_fail2ban_custom_configuration_template }}'
   name: fail2ban | Copy fail2ban custom configuration file into place.

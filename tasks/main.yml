@@ -27,7 +27,7 @@
     content: ''
     dest: /var/log/auth.log
     force: false
-    mode: 420
+    mode: "0644"
   name: Ensure auth.log file is present.
   when: ansible_distribution == 'Debian'
 - ansible.builtin.include_vars: '{{ ansible_os_family }}.yml'
