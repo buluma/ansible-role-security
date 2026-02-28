@@ -35,8 +35,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   - role: buluma.epel
   - role: buluma.repo_epel
     when:
-    - (ansible_distribution == "Amazon" and ansible_distribution_major_version 
-      == "2") or (ansible_os_family == "RedHat" and 
+    - (ansible_distribution == "Amazon" and ansible_distribution_major_version
+      == "2") or (ansible_os_family == "RedHat" and
       ansible_distribution_major_version in [ "7", "8" ])
 ```
 
@@ -121,4 +121,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
-

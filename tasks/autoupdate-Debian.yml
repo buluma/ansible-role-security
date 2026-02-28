@@ -9,7 +9,7 @@
     mode: 420
     owner: root
     src: '{{ item }}.j2'
-  name: autoupdate-Debian | Copy unattended-upgrades configuration files in 
+  name: autoupdate-Debian | Copy unattended-upgrades configuration files in
     place.
   with_items:
   - 10periodic

@@ -23,7 +23,7 @@
     regexp: ^UseDNS
   - line: PermitEmptyPasswords {{ security_ssh_permit_empty_password }}
     regexp: ^PermitEmptyPasswords
-  - line: ChallengeResponseAuthentication {{ 
+  - line: ChallengeResponseAuthentication {{
       security_ssh_challenge_response_auth }}
     regexp: ^ChallengeResponseAuthentication
   - line: GSSAPIAuthentication {{ security_ssh_gss_api_authentication }}
