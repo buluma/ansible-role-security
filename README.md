@@ -52,7 +52,7 @@ security_autoupdate_enabled: false
 security_autoupdate_mail_on_error: true
 security_autoupdate_mail_to: ""
 security_autoupdate_reboot: "false"
-security_autoupdate_reboot_time: 03:00
+security_autoupdate_reboot_time: "03:00"
 security_autoupdate_secpkgs_only: false
 security_fail2ban_custom_configuration_template: jail.local.j2
 security_fail2ban_enabled: true
@@ -121,3 +121,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+
