@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-security/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v26.6.0...HEAD)
+
+**Closed issues:**
+
+- Check fail2ban failure on focal/bionic [\#4](https://github.com/buluma/ansible-role-security/issues/4)
+
 ## [v26.6.0](https://github.com/buluma/ansible-role-security/tree/v26.6.0) (2026-06-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-security/compare/v24.3.31...v26.6.0)
