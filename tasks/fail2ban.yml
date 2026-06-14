@@ -4,12 +4,12 @@
     enablerepo: epel
     name: fail2ban
     state: present
-  when: ansible_facts.os_family == 'RedHat'
+  when: ansible_facts['os_family'] == 'RedHat'
 - name: fail2ban | Install fail2ban (Debian).
   ansible.builtin.package:
     name: fail2ban
     state: present
-  when: ansible_facts.os_family == 'Debian'
+  when: ansible_facts['os_family'] == 'Debian'
 - name: fail2ban | Copy fail2ban custom configuration file into place.
   ansible.builtin.template:
     dest: /etc/fail2ban/jail.local

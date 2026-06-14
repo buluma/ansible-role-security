@@ -8,5 +8,5 @@
     - role: buluma.epel
     - role: buluma.repo_epel
       when:
-        - (ansible_facts.distribution == "Amazon" and ansible_facts.distribution_major_version == "2") or (ansible_facts.os_family == "RedHat" and
-          ansible_facts.distribution_major_version in [ "7", "8" ])
+        - (ansible_facts['distribution'] == "Amazon" and ansible_facts['distribution_major_version'] == "2") or (ansible_facts['os_family'] == "RedHat" and
+          ansible_facts['distribution_major_version'] in [ "7", "8" ])
