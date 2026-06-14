@@ -1,13 +1,18 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-security/tree/HEAD)
+## [v26.6.0](https://github.com/buluma/ansible-role-security/tree/v26.6.0) (2026-06-14)
 
-[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v24.3.31...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v24.3.31...v26.6.0)
 
 **Closed issues:**
 
 - Update action [\#15](https://github.com/buluma/ansible-role-security/issues/15)
 - rebuild action [\#14](https://github.com/buluma/ansible-role-security/issues/14)
+
+**Merged pull requests:**
+
+- Bump ansible/ansible-lint from 26.1.1 to 26.2.0 [\#28](https://github.com/buluma/ansible-role-security/pull/28) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 4 to 6 [\#27](https://github.com/buluma/ansible-role-security/pull/27) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v24.3.31](https://github.com/buluma/ansible-role-security/tree/v24.3.31) (2024-03-26)
 
