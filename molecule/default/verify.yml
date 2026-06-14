@@ -1,0 +1,17 @@
+---
+- name: Verify
+  hosts: all
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Check sshd_config exists
+      ansible.builtin.stat:
+        path: /etc/ssh/sshd_config
+      register: sshd_config
+
+    - name: Assert sshd_config is present
+      ansible.builtin.assert:
+        that:
+          - sshd_config.stat.exists
+        quiet: true
