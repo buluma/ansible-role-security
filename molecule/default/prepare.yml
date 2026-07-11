@@ -3,10 +3,15 @@
   hosts: all
   become: true
   gather_facts: false
+
+  pre_tasks:
+    - name: Install sudo if missing
+      ansible.builtin.raw: "{{ ansible_pkg_mgr | default('dnf') }} install -y sudo}"
+      become: false
+      changed_when: false
+      failed_when: false
+
   roles:
     - role: buluma.bootstrap
     - role: buluma.epel
     - role: buluma.repo_epel
-      when:
-        - (ansible_facts['distribution'] == "Amazon" and ansible_facts['distribution_major_version'] == "2") or (ansible_facts['os_family'] == "RedHat" and
-          ansible_facts['distribution_major_version'] in [ "7", "8" ])
