@@ -1,5 +1,9 @@
 # Changelog
 
+## [v26.7.1](https://github.com/buluma/ansible-role-security/tree/v26.7.1) (2026-07-21)
+
+[Full Changelog](https://github.com/buluma/ansible-role-security/compare/v26.7.0...v26.7.1)
+
 ## [v26.7.0](https://github.com/buluma/ansible-role-security/tree/v26.7.0) (2026-07-21)
 
 [Full Changelog](https://github.com/buluma/ansible-role-security/compare/v26.6.1...v26.7.0)
